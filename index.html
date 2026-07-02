@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khadmeen Wiser | ICT </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">KHADMEEN WISER</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tracking">Track Order</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#book">Book Repair</a></li>
+                <li><button id="openAuthBtn" class="nav-btn">Login / Sign Up</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Expert ICT & Computer Maintenance</h1>
+            <p>Fast, reliable, and professional tech solutions for your home and business.</p>
+            <a href="#book" class="cta-btn">Book a Repair</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Expert Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Hardware Repair</h3>
+                <p>Component replacements, screen repairs, and system upgrades.</p>
+            </div>
+            <div class="service-card">
+                <h3>Software Troubleshooting</h3>
+                <p>OS installation, virus removal, and performance optimization.</p>
+            </div>
+            <div class="service-card">
+                <h3>Network Solutions</h3>
+                <p>LAN/WAN setup, Wi-Fi configuration, and IT security infrastructure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Tracking Section -->
+    <section id="tracking" class="tracking-section">
+        <h2>Repair Status Tracker</h2>
+        <p>Enter your 6-digit Ticket ID below to see real-time updates.</p>
+        <div class="tracker-search">
+            <input type="text" id="ticketInput" placeholder="e.g., KW-1042" maxlength="7">
+            <button id="trackBtn">Track Status</button>
+        </div>
+
+        <!-- Progress Visualizer Bar -->
+        <div id="trackerVisual" class="tracker-visual hidden">
+            <div class="status-steps">
+                <div class="step" id="step1">
+                    <div class="bullet">1</div>
+                    <p>Received</p>
+                </div>
+                <div class="step" id="step2">
+                    <div class="bullet">2</div>
+                    <p>Diagnostics</p>
+                </div>
+                <div class="step" id="step3">
+                    <div class="bullet">3</div>
+                    <p>In Repair</p>
+                </div>
+                <div class="step" id="step4">
+                    <div class="bullet">4</div>
+                    <p>Ready</p>
+                </div>
+            </div>
+            <p id="trackerMessage" class="tracker-msg"></p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <h2>Service Plans & Pricing</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Basic Tier</h3>
+                <div class="price">$49<span>/fix</span></div>
+                <ul>
+                    <li>Single Device Diagnostics</li>
+                    <li>Virus & Malware Removal</li>
+                    <li>Basic OS Optimization</li>
+                    <li>Standard 3-Day Turnaround</li>
+                </ul>
+                <a href="#book" class="price-btn">Choose Basic</a>
+            </div>
+            <div class="price-card popular">
+                <div class="badge">Most Popular</div>
+                <h3>Pro Tier</h3>
+                <div class="price">$99<span>/fix</span></div>
+                <ul>
+                    <li>Hardware Installation</li>
+                    <li>Advanced Data Recovery</li>
+                    <li>OS Clean Reinstallation</li>
+                    <li>Priority 24-Hour Turnaround</li>
+                </ul>
+                <a href="#book" class="price-btn">Choose Pro</a>
+            </div>
+            <div class="price-card">
+                <h3>Enterprise</h3>
+                <div class="price">$249<span>/mo</span></div>
+                <ul>
+                    <li>Up to 5 Business Devices</li>
+                    <li>Full Network Maintenance</li>
+                    <li>Cloud Backup Setup</li>
+                    <li>On-Site Support & On-Call IT</li>
+                </ul>
+                <a href="#book" class="price-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="book" class="booking-section">
+        <h2>Book a Repair / Open a Ticket</h2>
+        <form id="bookingForm" class="booking-form">
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="clientName">Full Name</label>
+                    <input type="text" id="clientName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Email Address</label>
+                    <input type="email" id="clientEmail" required placeholder="john@example.com">
+                </div>
+            </div>
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="deviceType">Device Type</label>
+                    <select id="deviceType" required>
+                        <option value="" disabled selected>Select device type</option>
+                        <option value="Laptop">Laptop / Notebook</option>
+                        <option value="Desktop">Desktop Tower</option>
+                        <option value="Network">Networking Hardware</option>
+                        <option value="Other">Other ICT Equipment</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="serviceTier">Service Tier Requested</label>
+                    <select id="serviceTier" required>
+                        <option value="Basic">Basic Tier ($49)</option>
+                        <option value="Pro">Pro Tier ($99)</option>
+                        <option value="Enterprise">Enterprise Support</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="issueDescription">Description of the Issue</label>
+                <textarea id="issueDescription" rows="4" required placeholder="Please describe what is wrong with the machine..."></textarea>
+            </div>
+            <button type="submit" class="submit-ticket-btn">Submit Support Ticket</button>
+        </form>
+    </section>
+
+    <!-- Auth Modal (Login/Signup popup) -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="tab-container">
+                <button id="loginTab" class="tab-btn active">Login</button>
+                <button id="signupTab" class="tab-btn">Sign Up</button>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <h3>Welcome Back</h3>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <form id="signupForm" class="auth-form hidden">
+                <h3>Create Account</h3>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Khadmeen Wiser. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
